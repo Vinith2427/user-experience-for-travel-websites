@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible India</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">A Travel Story</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#aboutus">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-text">
+            <h1>Incredible India!</h1>
+            <p>Be the part of this wonderful journey</p>
+            <a href="#" class="explore-btn">Explore Now</a>
+        </div>
+    </section>
+
+    <section class="places" id="places">
+        <h2>You’ll fall in love with India</h2>
+        <p>Explore India from Kashmir to Kanyakumari</p>
+        <div class="region-filters">
+            <button class="filter-btn" onclick="filterPlaces('all')">ALL</button>
+            <button class="filter-btn" onclick="filterPlaces('north')">NORTH</button>
+            <button class="filter-btn" onclick="filterPlaces('central')">CENTRAL</button>
+            <button class="filter-btn" onclick="filterPlaces('north-east')">NORTH-EASTERN</button>
+            <button class="filter-btn" onclick="filterPlaces('south')">SOUTH</button>
+        </div>
+
+        <div class="places-grid">
+            <!-- Each place card -->
+            <div class="place-card" data-region="north">
+                <img src="p1.jpg" alt="Golden Temple">
+                <h3>Golden Temple</h3>
+                <p class="place-details">Golden Temple is a stunning religious site in Amritsar, Punjab.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="central">
+                <img src="p2.jpg" alt="Gwalior Fort">
+                <h3>Gwalior Fort</h3>
+                <p class="place-details">Gwalior Fort is a historic fortress located in Madhya Pradesh.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="north-east">
+                <img src="p3.jpg" alt="Tawang">
+                <h3>Tawang</h3>
+                <p class="place-details">Tawang is a beautiful town situated in Arunachal Pradesh.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="north">
+                <img src="p5.jpg" alt="Camel Safari">
+                <h3>Camel Safari</h3>
+                <p class="place-details">Camel Safari in Rajasthan offers a unique and thrilling way to explore the vast Thar Desert, Rajasthan.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="central">
+                <img src="p6.jpg" alt="Sanchi Stupa">
+                <h3>Sanchi Stupa</h3>
+                <p class="place-details">The Sanchi Stupa in Madhya Pradesh is a UNESCO World Heritage site and one of India's most important Buddhist monuments located in Madhya Pradesh</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="south">
+                <img src="p12.jpg" alt="Alleppey">
+                <h3>Alleppey</h3>
+                <p class="place-details">Known as the "Venice of the East," Alleppey in Kerala is famous for its picturesque backwaters, houseboats, and tranquil lagoons.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="north">
+                <img src="p4.jpg" alt="Mehrangarh Fort">
+                <h3>Mehrangarh Fort</h3>
+                <p class="place-details">Perched on a hill overlooking the city of Jodhpur, Mehrangarh Fort is one of the largest and most majestic forts in India.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="south">
+                <img src="p10.jpg" alt="Vivekananda Rock Memorial">
+                <h3>Vivekananda Rock Memorial</h3>
+                <p class="place-details">The Vivekananda Rock Memorial, located off the coast of Kanyakumari, is a spiritual monument dedicated to Swami Vivekananda.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="north-east">
+                <img src="p7.jpg" alt="Umngot river">
+                <h3>Umngot river</h3>
+                <p class="place-details">The Umngot River in Meghalaya is famed for its crystal-clear waters, so transparent that boats appear to float on air. </p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <div class="place-card" data-region="south">
+                <img src="p11.jpg" alt="Colva Beach">
+                <h3>Colva Beach</h3>
+                <p class="place-details">Colva Beach in Goa is one of the most popular and scenic beaches on the western coast of India.</p>
+                <button onclick="toggleDetails(this)">Show More</button>
+            </div>
+
+            <!-- Additional cards can be added here following the same format -->
+        </div>
+    </section>
+
+    <section class="bookticket" id="bookticket">
+        <h2>Book Your Ticket</h2>
+        <form id="book-ticket-form" action="/submit-ticket" method="POST">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="place">Place:</label>
+                <select id="place" name="place" required>
+                    <option value="">Select a place</option>
+                    <option value="Golden Temple">Golden Temple</option>
+                    <option value="Gwalior Fort">Gwalior Fort</option>
+                    <option value="Tawang">Tawang</option>
+                    <option value="Camel Safari">Camel Safari</option>
+                    <option value="Sanchi Stupa">Sanchi Stupa</option>
+                    <option value="Alleppey">Alleppey</option>
+                    <option value="Mehrangarh Fort">Mehrangarh Fort</option>
+                    <option value="Vivekananda Rock Memorial">Vivekananda Rock Memorial</option>
+                    <option value="Umngot River">Umngot River</option>
+                    <option value="Colva Beach">Colva Beach</option>
+                </select>
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div>
+                <label for="persons">No. of Persons:</label>
+                <input type="number" id="persons" name="persons" min="1" required>
+            </div>
+            <button type="submit">Book Ticket</button>
+        </form>
+    </section>
+
+    <section class="container" id="service">
+            <div class="header">
+                <h1>Always in our customer Favour</h1>
+                <p>Who are always with tight Budget</p>
+            </div>
+    
+            <div class="services">
+                <div class="service-box">
+                    <img src="s1.png" alt="Amenities Icon" class="icon">
+                    <h2>Amenities Selection</h2>
+                    <p>It's totally on you what you want and what you want to let it go on Hotel Selection process.</p>
+                </div>
+    
+                <div class="service-box">
+                    <img src="s2.png" alt="Visa Icon" class="icon">
+                    <h2>Visa Ready</h2>
+                    <p>Just 32 Hours - What it takes to get your Visa Ready and other documentation necessary for travel.</p>
+                </div>
+    
+                <div class="service-box">
+                    <img src="s3.png" alt="Travel Icon" class="icon">
+                    <h2>Personalized Travel Plans</h2>
+                    <p>We have a wide variety of Hotels & Resorts to accommodate you. 3D4N or 15D16N totally up to you.</p>
+                </div>
+            </div>
+    </section>
+
+    <footer class="footer" id="aboutus">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>
+                    We provide Tour Plans for your most comfortable travel ever. Let yourself dive into the Beauty, Culture & festivals of India. Have your good time in India.
+                </p>
+                <p class="copyright">
+                    Copyright ©2024 All rights reserved | This website is created with <span class="heart">❤</span> by <a href="#">Navaneetha Krishnan</a>
+                </p>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h2>Newsletter</h2>
+                <form id="newsletter-form">
+                    <h6>Stay update with our latest</h6>
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit"><i class="fa fa-arrow-right"></i></button>
+                </form>
+            </div>
+
+            <div class="footer-section follow-us">
+                <h2>Follow Us</h2>
+                <p>Let us be social</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-snapchat"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

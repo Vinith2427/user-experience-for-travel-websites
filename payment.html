@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Payment Page</h2>
+    <p>Please click the button below to complete your payment.</p>
+    <button id="payButton">Pay Now</button>
+
+    <script>
+        document.getElementById('payButton').addEventListener('click', function() {
+            // Simulate payment processing
+            // Replace this with actual payment integration logic as needed
+            setTimeout(() => {
+                alert('Payment successful! Ticket booked successfully.');
+                window.location.href = '/'; // Redirect to the home page or ticket confirmation page
+            }, 2000); // Simulating a 2-second payment process
+        });
+    </script>
+</body>
+</html>
